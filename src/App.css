@@ -1,0 +1,74 @@
+html, body, #root{
+	height: 100%;
+    width: 100%;
+
+}
+.omilogo{
+    width:100px
+}
+.totalproducts{
+    margin: 20px;
+    position: absolute;
+    font-weight: bold;
+    border: 1px solid blue;
+    padding: 0px 15px 0px 5px;
+    border-radius: 5px;
+}
+.productvalue{
+    padding: 0px 10px;
+    color:blue;
+    font-weight:bold
+}
+.productlistcontainer, .addproductcontainer,.orderproductcontainer,.unittestcontainer{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.addproduct{
+    margin: 10px 0px;
+    float: right;
+}
+.ordericon{
+    width: 25px;
+    cursor: pointer;
+}
+
+.formtittle{
+    margin: 0px !important;
+    background: lightblue;
+}
+.formitemcontainer{
+    margin: 20px 20px !important;
+}
+#ordercontainer, #productcontainer {
+    width: 350px;
+    padding: 0px !important;
+}
+.titlecol{
+    margin: 5px 0px;   
+}
+.titlehead{
+    margin:0px
+}
+.error{
+    text-align:center;
+    color:red;
+    display:none
+}
+
+.testtittle{
+    margin: 0px !important;
+    background: lightblue;
+    padding: 5px;
+}
+
+.listitem{
+    padding:10px
+}
+.ullist{
+    margin-top: 20px;
+}
+.spinner{
+    text-align: center;
+    margin:50px
+}
