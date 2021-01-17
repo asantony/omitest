@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Row, Form, Col, Button } from 'react-bootstrap';
+import PostData from './PostData';
 
 class AddProduct extends React.Component {
     constructor(props) {
@@ -42,27 +43,21 @@ class AddProduct extends React.Component {
     }
 
     onFormSubmit = (data) => {
-        const postUrl = "https://uiexercise.onemindindia.com/api/Product";
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+        const me = this;
+        const myPostData = new PostData();
+
+        function respondonSuccess(res) {
+            me.props.onFormSuccessorcancel();
         }
-        fetch(postUrl, requestOptions)
-            .then(async response => {
-                const data = await response.json();
-                if (!response.ok) {
-                    const error = (data && data.message) || response.status;
-                    return Promise.reject(error);
-                }
-                this.props.onFormSuccessorcancel();
+        function respondonFailure() {
+            me.setState({
+                errordisplay: "block",
+                errorMessage: "Sorry! Check your Data"
             })
-            .catch(error => {
-                this.setState({
-                    errordisplay: "block",
-                    errorMessage: "Sorry! Check your Data"
-                })
-            });
+
+        }
+        const postUrl = "https://uiexercise.onemindindia.com/api/Product";
+        myPostData.postdatatoServer(postUrl, data, respondonSuccess, respondonFailure);
     }
 
     render() {
